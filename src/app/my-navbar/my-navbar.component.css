@@ -1,0 +1,14 @@
+#myNav {
+  min-width: 100%;
+  min-height: auto;
+  background: #343a40;
+}
+/*.myItems {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 15px;
+}*/
+.navbar .navbar-collapse ul.navbar-nav li.nav-item a.active {
+  color: red;
+}
+

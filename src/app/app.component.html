@@ -1,0 +1,9 @@
+<app-my-navbar (childEvent)="message=$event" [parentData]="testData"></app-my-navbar>
+
+<div class="container text-center pt-4">
+  <h2>{{ title }} is running!</h2>
+  <p class="pt-4"> {{ descriptions}} </p>
+  <p class="h4" style="color: green"> {{ message | uppercase }}</p>
+</div>
+
+<router-outlet></router-outlet>

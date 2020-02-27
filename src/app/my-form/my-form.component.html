@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2 class="text-center"> Example form </h2>
+  <form #userForm="ngForm">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Name</label>
+        <input type="text" name="name" [class.is-invalid]="name.invalid && name.touched" class="form-control" required #name="ngModel" [(ngModel)]="userModel.name">
+        <small [class.d-none]="name.valid || name.untouched" class="text-danger">Name is required</small>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Lastname</label>
+        <input type="text" name="lastname" [class.is-invalid]="lastname.invalid && lastname.touched" class="form-control" required #lastname="ngModel" [(ngModel)]="userModel.lastname">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Email</label>
+        <input type="email" name="email" [class.is-invalid]="email.invalid && email.touched" class="form-control" required #email="ngModel" [(ngModel)]="userModel.email">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Password</label>
+        <input type="password" name="password" [class.is-invalid]="password.invalid && password.touched" class="form-control" required #password="ngModel" [(ngModel)]="userModel.password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="number" name="phone" [class.is-invalid]="phone.invalid && phone.touched" class="form-control" required #phone="ngModel" pattern="\d{10}$" [(ngModel)]="userModel.phone">
+      <small [class.d-none]="phone.valid || phone.untouched" class="text-danger">Phone number most be 10 digits</small>
+    </div>
+    <button type="button" [disabled]="userForm.form.invalid" class="btn btn-primary" (click)="onClickForm(userModel)">Sign in</button>
+  </form>
+</div>

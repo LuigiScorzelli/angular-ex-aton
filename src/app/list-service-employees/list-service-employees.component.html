@@ -1,0 +1,8 @@
+<div class="container text-center">
+  <h2 class="text-center mb-4"> Index dipendenti </h2>
+  <ul style="list-style: none">
+    <li (click)="onSelect(employee)" class="h2" *ngFor="let employee of employees">
+      {{ employee.id }}. {{ employee.name }} {{ employee.lastname }}
+    </li>
+  </ul>
+</div>
